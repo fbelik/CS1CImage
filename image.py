@@ -90,11 +90,12 @@ def drawImages(title,images):
         image.draw(myWin)
     # Exit on click does not work on my version of python/cImage
 
+import sys
 
-myImg = FileImage("tennis.gif")
-myImg2 = FileImage("tennis2.gif")
-drawImages("a",[myImg2, rotateImage90(myImg2)])
-#drawImages("Tennis", [myImg,transformPixels(rotateImage90(myImg),sepiaTone),transformPixels(rotateImage90(myImg),gammaTwo)])
-
+if __name__ == "__main__":
+    myImg = FileImage(sys.argv[1])
+    title = sys.argv[2]
+    drawImages(title, [myImg,transformPixels(rotateImage90(myImg),sepiaTone),transformPixels(rotateImage90(myImg),gammaTwo)])
+    input("Press enter to quit")
     
                 
